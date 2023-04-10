@@ -10,5 +10,5 @@ Usage:
 - start container bash with `make exec-php-fpm`
 - run the first task with command `php /opt/www/artisan parse:phones --i=input.txt --o=output.txt --d=db.txt`
 - output file is now being located in the directory `storage/app/`
-- codebase for the first task is located in Console/Commands/firstExample.php
+- codebase for the first task is located in app/Console/Commands/FirstExample.php
 - copy vendor folder from container `make docker-cp-vendor` (if needed)
