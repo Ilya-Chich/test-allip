@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  allip-test-php-fpm:
+    build:
+      context: .
+      dockerfile: ./deploy/php-fpm/Dockerfile
+    volumes:
+      - ./deploy/php-fpm/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+    environment:
+      PHP_IDE_CONFIG: serverName=allip-test
+

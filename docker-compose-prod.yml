@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  allip-test-php-fpm:
+    build:
+      args:
+        gitlab_username: ${GITLAB_USERNAME}
+        gitlab_access_token: ${GITLAB_ACCESS_TOKEN}

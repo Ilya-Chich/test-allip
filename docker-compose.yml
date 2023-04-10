@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  allip-test-php-fpm:
+    container_name: allip-test-php-fpm
+    build:
+      context: .
+      dockerfile: ./deploy/php-fpm/Dockerfile.production
+    volumes:
+      - /etc/hosts:/etc/hosts
+      - ./deploy/php-fpm/php.ini:/usr/local/etc/php/php.ini
+      - ./deploy/php-fpm/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
+      - ./app:/opt/www/app
+      - ./bootstrap:/opt/www/bootstrap
+      - ./config:/opt/www/config
+      - ./database:/opt/www/database
+      - ./public:/opt/www/public
+      - ./resources:/opt/www/resources
+      - ./routes:/opt/www/routes
+      - ./storage:/opt/www/storage
+      - ./tests:/opt/www/tests
+      - ./.env:/opt/www/.env
+      - ./artisan:/opt/www/artisan
+      - ./phpunit.xml:/opt/www/phpunit.xml
+    environment:
+      TZ: "Europe/Belgrade"
